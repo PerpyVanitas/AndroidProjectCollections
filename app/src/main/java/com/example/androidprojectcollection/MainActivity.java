@@ -6,12 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button btn1;
     Button btn2;
     Button btn3;
+
+    Button btn4;
+
+    Button btn6;
+    Button btn8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,12 +38,40 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn3 = (Button) findViewById(R.id.btbCalc);
+        btn3 = (Button) findViewById(R.id.btnCalc);
         btn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent3 = new Intent(MainActivity.this, CalculatorExercise.class);
                 startActivity(intent3);
             }
         });
+
+        btn4 = (Button) findViewById(R.id.btnConnect3);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent4 = new Intent(MainActivity.this, Connect3.class);
+                startActivity(intent4);
+            }
+        });
+
+        btn6 = (Button)findViewById(R.id.btnIntents);
+        btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent6 = new Intent (MainActivity.this, PassingIntentsExercise.class);
+                startActivity(intent6);
+            }
+        });
+
+        btn8 = (Button) findViewById(R.id.btnMenu);
+
+        btn8.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent8 = new Intent (MainActivity.this, MenuExercise.class);
+                startActivity(intent8);
+            }
+        }));
+
     }
 }
